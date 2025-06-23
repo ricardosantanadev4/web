@@ -2,11 +2,13 @@
 import Image from "next/image";
 import logo from '../../assets/logo.svg';
 
+import { InviteLinkInput } from "./invite-link-input";
 import { Ranking } from "./ranking";
 import { Stats } from "./stats";
-import { InviteLinkInput } from "./invite-link-input";
 
 export default function InvitePage() {
+    const invitLink = 'http://localhost/3000/invite/14523652563';
+
     return (
         <div
             className="min-h-dvh flex items-center justify-between gap-16 flex-col md:flex-row"
@@ -38,7 +40,7 @@ export default function InvitePage() {
                 </div>
 
                 <div
-                    className="space-y-2"
+                    className="space-y-6"
                 >
                     <div
                         className="space-y-3"
@@ -48,14 +50,18 @@ export default function InvitePage() {
                             Indique e ganhe
                         </h2>
 
-                        <p className="text-gray-300">
+                        <p
+                            className="text-gray-300"
+                        >
                             Convide mais pessoas para o evento e concorra a prêmios
                             exclusivos! É só compartilhar o link abaixo e acompanhar as
                             inscrições:
                         </p>
                     </div>
-                    
-                    <InviteLinkInput />
+
+                    <InviteLinkInput
+                        invitLink={invitLink}
+                    />
 
                     <Stats />
                 </div>
